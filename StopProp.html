@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>StopProp</title>
+    <style>
+
+        div{
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        #div1{
+            height: 400px;
+            width: 400px;
+        }
+
+        #div2{
+            height: 300px;
+            width: 300px;
+        }
+
+        #div3{
+            height: 200px;
+            width: 200px;
+        }
+
+        #div4{
+            height: 100px;
+            width: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div id="div1">
+        #div1
+        <div id="div2">
+            #div2
+            <div id="div3">
+                #div3
+                <div id="div4">
+                    #div4
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+
+        var divs = document.querySelectorAll("div");
+
+        for(var i = 0; i<divs.length; i++){
+            divs[i].addEventListener("click", function(evt){
+//                console.log(evt);
+                console.log("clicked target: " + evt.srcElement.id)
+                if(evt.currentTarget.id === "div2"){
+                    console.log("just ended");
+                    evt.stopImmediatePropagation();
+                    console.log("stop im prop ended");
+                }
+            },true); //true for capturing
+        }
+
+    </script>
+</body>
+</html>

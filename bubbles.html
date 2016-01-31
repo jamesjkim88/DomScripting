@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>bubbles</title>
+    <style>
+
+        div{
+            border: 1px solid black;
+            margin: 0 auto;
+        }
+
+        .d1{
+            height: 400px;
+            width: 400px;
+        }
+
+        .d2{
+            height: 300px;
+            width: 300px;
+        }
+
+        .d3{
+            height: 200px;
+            width: 200px;
+        }
+
+        .d4{
+            height: 100px;
+            width: 100px;
+        }
+
+
+    </style>
+</head>
+<body>
+    <div class="d1">
+        d1
+        <div class="d2">
+            d2
+            <div class="d3">
+                d3
+                <div class="d4" id = "inner">d4</div>
+            </div>
+        </div>
+    </div>
+    <script>
+
+        var div = document.getElementsByTagName("div");
+
+        for(var i = 0; i<div.length; i++){
+            div[i].addEventListener("click", function(evt){
+                console.log(evt);
+                console.log("target: " + evt.srcElement.className + " this : " + this.className);
+            },false)
+        }
+
+    </script>
+</body>
+</html>
