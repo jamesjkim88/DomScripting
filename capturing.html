@@ -49,10 +49,10 @@
     var div = document.getElementsByTagName("div");
 
     for(var i = 0; i<div.length; i++){
-        div[i].addEventListener("click", function(evt){
+        div[i].addEventListener("click", function(evt,elem){
             evt.preventDefault();
-            console.log("clicked on: " + evt.srcElement.className + " Starting from: " + this.className);
-        },false)
+            alert("clicked on: " + evt.srcElement.className + " Starting from: " + this.className);
+        },true)
     }
 
 </script>

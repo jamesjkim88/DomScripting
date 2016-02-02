@@ -19,7 +19,7 @@
 
         div.addEventListener("click", function(evt){
             console.log("clicked on: " , evt.target.parentNode.id);
-//            evt.stopPropagation();
+            evt.stopPropagation();
         }, false);
 
         for(var i = 0; i<10; i++){
